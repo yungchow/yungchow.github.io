@@ -1,15 +1,15 @@
 # Site settings
-name: Watch And Learn
+name: 求知若渴;大智若愚
 email: 13787415534@163.com
 author: Yung Chow
 #url: http://www.hifreud.com
 #resume_site: http://www.hifreud.com/Resume.io/
 github: https://github.com/yungchow/
 baseurl: ""
-description: Why not?
-meta_description: 周榕;个人博客;求知若渴;大智若愚
+description: To seize everything you ever wanted.
+meta_description: 周榕;个人博客
 motto: It's our wits that make us men.
-banner: To seize everything you ever wanted.
+banner: Have the courage to follow your heart and intuition
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
