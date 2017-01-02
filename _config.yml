@@ -1,5 +1,5 @@
 # Site settings
-name: 求知若渴;大智若愚
+name: Think Different
 email: 13787415534@163.com
 author: Yung Chow
 #url: http://www.hifreud.com
@@ -8,7 +8,7 @@ github: https://github.com/yungchow/
 baseurl: ""
 description: To seize everything you ever wanted.
 meta_description: 周榕;个人博客
-motto: It's our wits that make us men.
+motto: Stay hungry, Stay foolish
 banner: Have the courage to follow your heart and intuition
 
 #permalink: /:categories/:year/:month/:day/:title/
