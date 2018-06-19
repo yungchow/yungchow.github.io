@@ -49,3 +49,8 @@ github上的仓库中自动生成了README.md文件，而本地中没有，导�
 
 
 
+
+> 更新远程分支列表
+
+- `git remote update origin --prune`
+- `warning:remote host identification has changed!`提示远程服务器主机名改变，需要修改`.ssh/known_hosts`中的主机名
