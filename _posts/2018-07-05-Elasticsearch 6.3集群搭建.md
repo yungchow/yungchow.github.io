@@ -165,6 +165,56 @@
   curl -XGET 'http://172.18.68.11:9200/_cat?pretty'
   ```
 
+#### Kibana
+
+- 官网下载kibana-6.3.0-linux-x86_64.tar并发送至服务器/opt目录下
+
+  ```shell
+  cd /opt
+  mkdir kibana
+  mv kibana-6.3.0-linux-x86_64.tar kibana
+  tar -zxvf kibana-6.3.0-linux-x86_64.tar
+  chown -R esuser:esgroup /opt/kibana
+  su esuser
+  ```
+
+- 修改配置文件
+
+  ```shell
+  vi /opt/kibana/kibana-6.3.0-linux-x86_64/config/kibana.yml
+  #kibana的访问地址
+  server.port: 5601
+  server.host: 192.168.21.204 
+  #es所在地址
+  elasticsearch.url: "http://192.168.21.204:9200"
+  ```
+
+- 启动
+
+  ```
+  cd /opt/kibana/kibana-6.3.0-linux-x86_64
+  ./bin/kibana
+  ```
+
+- 访问
+
+  - 浏览器从`http://192.168.21.204:5601`访问
+  - Monitoring可以看到对集群环境的监控
+  - DevTools中提供与es交互的界面
+
+- 问题
+
+  集群搭建之初，在kibana的监控界面虽然显示的节点数目有4个，但是能监控到的节点只有同一台主机中的2个节点，通过es提供的rest接口进行查询时显示的节点数目正常，最后发现是由于另一台主机时间错误导致，重新设置另一台主机的时间即可解决问题
+
+  ```shell
+  #安装ntpdate
+  yum install ntp
+  #ntp.sjtu.edu.cn是上海交通大学网络中心ntp服务器地址
+  /usr/sbin/ntpdate ntp.sjtu.edu.cn	
+  ```
+
+  
+
 
 
 ### 一些重要的参数配置
