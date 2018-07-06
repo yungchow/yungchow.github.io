@@ -92,7 +92,7 @@
   transport.tcp.port: 9301
   #组建集群的所有地址列表，可以通过这些节点来自动发现新加入集群的节点，IP地址或者主机名
   discovery.zen.ping.unicast.hosts:["192.168.21.204:9301","192.168.21.204:9302","135.251.209.27:9301","135.251.209.27:9302"]
-  #待研究
+  #防止同一个shard的主副本存在同一个物理机上
   cluster.routing.allocation.same_shard.host: true
   #为了避免脑裂，该值最少为（有资格进行master选举的节点数n/2+1），所以说该值应该根据你设置的vnode.master: true的节点数来确定，假设你设置的有资格选举为master的节点为1，该值设2则会报错not enough master nodes discovered during pinging
   discovery.zen.minimum_master_nodes: 2    
